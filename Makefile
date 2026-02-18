@@ -1,13 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
+CFLAGS = -Wall -Wextra -std=c99
 
-TARGET = process_simulator
-SRC = process_simulator.c
+all: myshell
 
-all: $(TARGET)
-
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
+myshell: myshell.c
+	$(CC) $(CFLAGS) myshell.c -o myshell
 
 clean:
-	rm -f $(TARGET)
+	rm -f myshell
